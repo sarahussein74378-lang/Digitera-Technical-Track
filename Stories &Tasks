@@ -1,0 +1,30 @@
+Epic
+Job Management
+Stories
+Story 1 — Close an Active Job
+As a recruiter, I want to close an active job so that I can stop receiving new applications
+Priority: High
+Story Points: 3
+Story 2 — Prevent New Applications
+As a system, I want to prevent candidates from applying to closed jobs so that closed jobs do not receive new applications
+Priority: High
+Story Points: 5
+Story 5 — Authorize Job Closing
+As a system, I want to restrict the Close Job action to authorized recruiters so that unauthorized users cannot close jobs
+Priority: Medium
+Story Points: 3
+Tasks
+* Close an Active Job
+Add Closed status to JobStatus
+Add ClosedAt property to Job entity
+Create Close Job API endpoint
+Validate that the job is active
+Validate recruiter authorization
+Update job status to Closed
+Save closing time
+Test Close Job endpoint
+* Prevent New Applications
+Check job status before creating an application
+Reject application if job is closed
+Return appropriate error response
+Test applying to a closed job
