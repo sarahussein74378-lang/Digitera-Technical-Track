@@ -1,1 +1,27 @@
+Close Job — PRD Components
+1. Business Problem
+Recruiters need a clear and reliable way to stop accepting new applications for a job when they no longer want to receive candidates
+2. Feature
+Close Job
+3. Actor
+Recruiter
+4. Business Rules
+*Only an authorized recruiter can close a job
+*Existing applications must not be deleted when the job is closed
+*Closing a job does not automatically reject or cancel existing applications
 
+The job status must be updated to Closed after successful confirmation
+5. Data Model
+Application (job Status)=>  closed , CosedAt
+6. API Endpoints
+Patch/api/jobs/{JobId}/Colse
+7. Acceptance Criteria
+* Prevent New Applications
+Given =>a job is closed
+When =>a candidate attempts to submit a new application
+Then =>the system rejects the application
+And no new application is created
+* Existing Applications Are Not Automatically Rejected
+Given =>a job has applications before it is closed
+When=> the recruiter closes the job
+Then =>the system does not automatically reject or cancel those applications
